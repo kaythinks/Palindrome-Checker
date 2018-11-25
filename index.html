@@ -41,7 +41,7 @@
 <body>
 <div class="center">
 	<p class="head"> A Vanilla JS Palindrome Checker</p>
-	<p class="head2">by @Kaythinks <span class="myinfo"> --- twitter</span></p>
+	<p class="head2">by @Kaythinks <span class="myinfo"> --- Github</span></p>
 
 	<input id="checkit" type="text" name="checkit" placeholder="Enter text here ...">
 	<input type="button" onclick="submit()" value="Submit" class="btn">
@@ -56,7 +56,7 @@
 			document.getElementById('ok').style.visibility = 'visible';
 			document.getElementById('checkit').value = '';
 		}else{
-			var x = document.getElementById('checkit').value.trim().toLowerCase();
+			var x = document.getElementById('checkit').value.trim().toLowerCase().replace(/ +/g, "");
 			var y = '';
 			for (var i =0; i < x.length; i++) {
 					y += x[(x.length - i) - 1];
