@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Palindrome Checker</title>
+</head>
+<style>
+	.center{
+		text-align: center;
+		background: purple;
+    	border: 3px solid transparent;
+    	padding-top: 12%;
+    	padding-bottom: 23%;
+	}
+	.btn{
+		background:green;
+		border:1px solid green;
+		padding:5px;
+		border-radius:2px;
+		color:white;
+	}
+	.head{
+		color:white;
+		font-size : 30px;
+	}
+	.head2{
+		color:white;
+		font-size : 15px;
+	}
+	.output{
+		color:orange;
+		font-size:45px;
+	}
+	#ok{
+		visibility: hidden;
+	}
+	.myinfo{
+		font-size:x-small
+	}
+</style>
+<body>
+<div class="center">
+	<p class="head"> A Vanilla JS Palindrome Checker</p>
+	<p class="head2">by @Kaythinks <span class="myinfo"> --- twitter</span></p>
+
+	<input id="checkit" type="text" name="checkit" placeholder="Enter text here ...">
+	<input type="button" onclick="submit()" value="Submit" class="btn">
+	<p id="output" class="output"></p>
+	<button id="ok"  class="btn" onclick="clearData()">Clear</button>
+</div>	
+<script type="text/javascript">
+	const submit = () => {
+		var input = document.getElementById('checkit').value.trim();
+		if (input.length <= 0) {
+			document.getElementById('output').innerHTML = 'You must enter a word dummy !!!';
+			document.getElementById('ok').style.visibility = 'visible';
+			document.getElementById('checkit').value = '';
+		}else{
+			var x = document.getElementById('checkit').value.trim().toLowerCase();
+			var y = '';
+			for (var i =0; i < x.length; i++) {
+					y += x[(x.length - i) - 1];
+			};
+			if (x === y) {
+				document.getElementById('output').innerHTML = `${input} is a valid palindrome !!!`;
+				document.getElementById('ok').style.visibility = 'visible';
+				document.getElementById('checkit').value = '';
+			}else{
+				document.getElementById('output').innerHTML = `${input} is not a palindrome`;
+				document.getElementById('ok').style.visibility = 'visible';
+				document.getElementById('checkit').value = '';
+			}
+		};
+		
+
+	}
+
+	const clearData = () => {
+		location.reload();
+	}
+</script>
+</body>
+</html>
