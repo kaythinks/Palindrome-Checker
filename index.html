@@ -9,9 +9,9 @@
 	.center{
 		text-align: center;
 		background: purple;
-    	border: 3px solid transparent;
-    	padding-top: 12%;
-    	padding-bottom: 23%;
+    	border: 3px solid transparent !important;
+    	padding-top: 12%;*/
+    	padding-bottom: 23%;*/
 	}
 	.btn{
 		background:green;
@@ -36,13 +36,16 @@
 		visibility: hidden;
 	}
 	.myinfo{
-		font-size:x-small
+		font-size:x-small;
+	}
+	.full{
+		background-color: purple;
 	}
 </style>
-<body>
+<body class="full">
 <div class="center">
 	<p class="head"> A Vanilla JS Palindrome Checker</p>
-	<p class="head2">by @Kaythinks <span class="myinfo"> --- Github</span></p>
+	<p class="head2">by @Kaythinks <span class="myinfo"> --- on Github</span></p>
 
 	<input id="checkit" type="text" name="checkit" placeholder="Enter text here ...">
 	<input type="button" onclick="submit()" value="Submit" class="btn">
